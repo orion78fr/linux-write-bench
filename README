@@ -1,0 +1,63 @@
+
+==========================
+=    Lire c'est écrire   =
+==========================
+
+------------
+Auteurs :
+------------
+
+Ludovic LE FRIOUX
+Guillaume TURCHINI
+
+
+-------------
+Contenu :
+-------------
+
+- Parser/ :
+	parser utilisé pour faire les courbes
+
+- bench.c :
+	code des différents benchs
+
+- launch_test.sh :
+	script permettant de lancer les benchs
+
+
+---------------
+Utilisation :
+---------------
+
+- installer les outils :
+	sudo apt-get install seekwatcher
+	sudo apt-get install blktrace 
+	sudo apt-get install pdftk
+
+- compiler le parser et le bench :
+	make
+
+- choisir les paramettres du bench :
+	Les paramettres suivants peuvent être modifiés dans launch_test.sh
+	nb_files : 	nombre de fichiers utilisé pour le bench		
+	files_mbytes :	taille des fichiers en Mb
+	hole :		taille des trous pour les fixed_holes	
+	nb_writes :	nombre d'écriture pour les fixed_holes
+	pourcentage :	pourcentage de pages écrites d'un fichier pour random
+	res_dir :	répertoire où seront mit les résultats
+	name : 		nom donnée aux résultats	
+
+- les différents modes :
+	semiseq_write 
+	alternate_rw 
+	alternate_file 
+	malloc_pfra 
+	random 
+	seq_and_sync  
+	random_fixed_holes 
+	seq_fixed_holes 
+	ranseq_fixed_holes 
+
+- lancer le bench :
+	sudo ./launch_test.sh mode
+
